@@ -168,3 +168,6 @@ CXCLpair.show <- pair.CXCL[1,] # show one ligand-receptor pair
 # Hierarchy plot
 vertex.receiver = seq(1,4) # a numeric vector
 netVisual_individual(cellchat, signaling = pathways.show,  pairLR.use = CXCLpair.show, vertex.receiver = vertex.receiver)
+
+
+# this is a comment to test if the commit - push works for a subdirectory
