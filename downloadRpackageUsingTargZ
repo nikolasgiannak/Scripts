@@ -1,0 +1,6 @@
+# To download a package in R using a tar.gz file
+	•	Close R
+	•	Download file to desktop
+	•	At command line enter   R CMD INSTALL Desktop/package_name
+	•	Open R
+	•	Load the library  library(package_name)
