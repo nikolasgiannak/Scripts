@@ -1,0 +1,51 @@
+# STEP 1 		is TO INSTALL sdkman
+
+
+
+# Launch a terminal window and type the following:
+
+curl -s "https://get.sdkman.io" | bash
+
+
+# After this, run the following, to initialise it:
+
+ source "/Users/nikolaosgiannakis/.sdkman/bin/sdkman-init.sh"
+
+# Check the version of it to see that everything has been installed properly
+# if it shows  script and native then everything is alright
+
+
+
+# STEP 2			is to install the Coretto and/ OR the Temurin
+
+# These 2 are the recommended distress
+
+# To install theme type the followingL:
+
+sdk install java 17.0.6-amzn
+
+sdk install jave 17.0.6-tem
+
+
+# STEP 3 		TO INSTALL NextFlow
+
+# In order to do that I need the wget command, Therefor I need to install wget
+
+
+# I will install wget with brew, as follows: 
+
+brew install wget
+
+ #after this I install nextflow as follows:
+
+wget -qO- https://get.nextflow.io | bash
+
+# Last but not least, I put the executable file of nextflow on my $PATH
+
+# 			HOW ?
+
+sudo ln -s /Users/nikolaosgiannakis/nextflow /usr/local/bin
+
+
+
+
