@@ -44,6 +44,10 @@ wget -qO- https://get.nextflow.io | bash
 
 # 			HOW ?
 
+# /Users/nikolaosgiannakis/nextflow is the complete file where I have the executable program
+# /usr/local/bin is where I put it on the PATH
+# Once I put the program on my PATH I can only write a single command aka nextflow instead of /Users/nikolaosgiannakis/nextflow
+
 sudo ln -s /Users/nikolaosgiannakis/nextflow /usr/local/bin
 
 
