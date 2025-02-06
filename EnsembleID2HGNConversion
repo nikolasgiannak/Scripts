@@ -1,0 +1,31 @@
+
+library(biomaRt)
+
+
+df_ensembl2geneName =read.csv("/Users/nikolasgiannakis/Desktop/AAA_Ovarian_cancer_p/RNAseq_data_heatlhy_ov_br_copd/Data_from_Matina/Neutrophil_data_vsd.csv",  sep=",", header=T, stringsAsFactors=FALSE )
+
+df_ensembl2geneName =read.csv("/Users/nikolasgiannakis/Desktop/AAA_Ovarian_cancer_p/RNAseq_data_heatlhy_ov_br_copd/Data_from_Matina/neutro_raw_counts.csv",  sep=",", header=T, stringsAsFactors=FALSE )
+
+
+mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
+
+df_ensembl2geneName$Gene <- as.character(df_ensembl2geneName$Gene)
+
+genes <- df_ensembl2geneName$Gene
+
+gene_IDs <- getBM(filters= "ensembl_gene_id", attributes= c("ensembl_gene_id","hgnc_symbol"),
+                  values = genes, mart= mart)
+
+library(dplyr)
+newdf <- left_join(df_ensembl2geneName, gene_IDs, by = c("Gene"="ensembl_gene_id"))
+
+write.csv(newdf, "neutro_raw_counts_ensambleId2geneName.csv")
+
+
+
+
+G_list <- getBM(filters = "hgnc_symbol", 
+                attributes="ensembl_gene_id",
+                values = genes, mart = mart)
+
+
