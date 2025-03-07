@@ -106,6 +106,33 @@ fastq-dump --split-files --gzip SRR*
 ###########################
 
 
+In my example that I have several SRR files across different/several lanes (here 8 for each sample) for only two replicates, I need to concatenate them before processing:
+For tumour rep 1: 
+SRR19643004
+SRR19643005
+SRR19643006
+SRR19643007
+SRR19643008
+SRR19643009
+SRR19643010
+SRR19643011
+
+For these, I have 3 output files, as I see at each SRR's metadata tab. By checking these, the first correspons to Index, the 2nd to read 1 and the 3rd to read 2.
+More info on dealing with 3 or more output files from the fast-dump can be found here:
+
+https://kb.10xgenomics.com/hc/en-us/articles/115003802691-How-do-I-prepare-Sequence-Read-Archive-SRA-data-from-NCBI-for-Cell-Ranger
+
+
+For tumour rep 2: 
+SRR19643012
+SRR19643013
+SRR19643014
+SRR19643015
+SRR19643016
+SRR19643017
+SRR19643018
+SRR19643019
+
 To run an Rstudio session, I follow the instructions here:
 
 https://www.wiki.ed.ac.uk/display/ResearchServices/RStudio
