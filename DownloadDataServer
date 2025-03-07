@@ -45,6 +45,11 @@ But first I need to find the data at GEO and copy the link that will help me to 
 wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200202/suppl/GSE200202_forebrain_atlas.h5ad.gz
     ###########################
 
+To run an Rstudio session, I follow the instructions here:
+
+https://www.wiki.ed.ac.uk/display/ResearchServices/RStudio
+
+
 
 
 
