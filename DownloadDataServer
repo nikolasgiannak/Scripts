@@ -118,12 +118,38 @@ SRR19643010
 SRR19643011
 
 For these, I have 3 output files, as I see at each SRR's metadata tab. By checking these, the first correspons to Index, the 2nd to read 1 and the 3rd to read 2.
+SRR19643004_1.fastq.gz is index, not to be used
+SRR19643004_2.fastq.gz is read 1 ( I will rename it)
+SRR19643004_3.fastq.gz is read 2 ( I will rename it)
 More info on dealing with 3 or more output files from the fast-dump can be found here:
 
 https://kb.10xgenomics.com/hc/en-us/articles/115003802691-How-do-I-prepare-Sequence-Read-Archive-SRA-data-from-NCBI-for-Cell-Ranger
 
+For SRR19643004_2.fastq.gz I rename it SRR196431_S1_L001_R1_001.fastq.gz, to agree with cellranger's naming guidelines.
+    SRR19643005_2.fastq.gz --> SRR196431_S1_L002_R1_001.fastq.gz
+    SRR19643006_2.fastq.gz --> SRR196431_S1_L003_R1_001.fastq.gz
+    SRR19643007_2.fastq.gz --> SRR196431_S1_L004_R1_001.fastq.gz
+    SRR19643008_2.fastq.gz --> SRR196431_S1_L005_R1_001.fastq.gz
+    SRR19643009_2.fastq.gz --> SRR196431_S1_L006_R1_001.fastq.gz
+    SRR19643010_2.fastq.gz --> SRR196431_S1_L007_R1_001.fastq.gz
+    SRR19643011_2.fastq.gz --> SRR196431_S1_L008_R1_001.fastq.gz
+  AND
+For SRR19643004_3.fastq.gz --> SRR196431_S1_L001_R2_001.fastq.gz, I change R1 to R2 as it is the 2nd read file.
+    SRR19643005_3.fastq.gz --> SRR196431_S1_L002_R2_001.fastq.gz
+    SRR19643006_3.fastq.gz --> SRR196431_S1_L003_R2_001.fastq.gz
+    SRR19643007_3.fastq.gz --> SRR196431_S1_L004_R2_001.fastq.gz
+    SRR19643008_3.fastq.gz --> SRR196431_S1_L005_R2_001.fastq.gz
+    SRR19643009_3.fastq.gz --> SRR196431_S1_L006_R2_001.fastq.gz
+    SRR19643010_3.fastq.gz --> SRR196431_S1_L007_R2_001.fastq.gz
+    SRR19643011_3.fastq.gz --> SRR196431_S1_L008_R2_001.fastq.gz
 
-For tumour rep 2: 
+To rename the files I do:
+###########################
+mv SRR19643004_3.fastq.gz SRR196431_S1_L001_R2_001.fastq.gz 
+########################### kai outw kathekseis
+
+
+For tumour rep 2, I change the names accordingly: 
 SRR19643012
 SRR19643013
 SRR19643014
