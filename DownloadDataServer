@@ -13,21 +13,32 @@ To download the reference genome for human and mouse I go here:
     https://support.10xgenomics.com/single-cell-dna/software/downloads/latest?
 
     Then at the command line either at the 10x/human or the 10x/mouse folder,
-    I do wget  https://cf.10xgenomics.com/supp/cell-dna/refdata-GRCh38-1.0.0.tar.gz (human)
+    I do:
+###########################
+wget  https://cf.10xgenomics.com/supp/cell-dna/refdata-GRCh38-1.0.0.tar.gz (human)
         wget https://cf.10xgenomics.com/supp/cell-dna/refdata-GRCm38-1.0.0.tar.gz (mouse)
+###########################
 
 and then I do 
+
+###########################
   tar -xzvf refdata-GRCh38-1.0.0.tar.gz 
   tar -xzvf refdata-GRCm38-1.0.0.tar.gz
+###########################
 
   Now I have the refrence genome both for human and mouse.
     
     
     At the data directory I move to the Data folder and create a new directory where I will download the data for a specific project
  ###########################
-    mkdir HamedNatComms
+    mkdir HamedNatComms/fastqTumourData/
    ###########################  
     , where I download the data from Akram's study on developing brain and cancer (GBM)
+
+
+
+There are two ways two go, either I download the precessed data as described below:
+
 
 But first I need to find the data at GEO and copy the link that will help me to download it.
     1. go here: https://www.ncbi.nlm.nih.gov/geo/
@@ -44,6 +55,56 @@ But first I need to find the data at GEO and copy the link that will help me to 
     ###########################
 wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200202/suppl/GSE200202_forebrain_atlas.h5ad.gz
     ###########################
+
+
+OR
+
+I download the raw fastq files based on the PRJNA number. 
+Run accessions are used to download SRA data. To download a list of Run accessions selected from your my search 
+I Click Send to on the top of the page, check the radiobutton File, select Accession List.
+#	•	Save this file in the location from which you are running the SRA Toolkit. SraAccList.txt 
+HOW?
+I am at the directory where I want to have the files "exports/eddie/scratch/ngiannak/Data/HamedNatComms/fastqTumourData"
+and I load the sratoolkit as follows:
+
+###########################
+module load igmm/apps/sratoolkit/3.1.1 
+vi SraAccList.txt
+###########################
+and there I paste the contents of the file SraAccList.csv I downloaded locally on my computer. It should look like this:
+
+SRR19643004
+SRR19643005
+SRR19643006
+SRR19643007
+SRR19643008
+SRR19643009
+SRR19643010
+SRR19643011
+SRR19643012
+SRR19643013
+SRR19643014
+SRR19643015
+SRR19643016
+SRR19643017
+SRR19643018
+SRR19643019
+
+
+In the command line I write
+###########################
+prefetch --option-file SraAccList.txt
+###########################
+
+To convert sra files to fastq files as follows. I  Add --split-files if I am dealing with paired-end reads.
+
+###########################
+fasterq-dump  SRR*
+
+  OR
+fastq-dump --split-files --gzip SRR*
+###########################
+
 
 To run an Rstudio session, I follow the instructions here:
 
