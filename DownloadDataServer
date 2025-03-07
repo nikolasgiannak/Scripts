@@ -1,0 +1,51 @@
+
+To download data on the server "eddie", initially I have to move to a directory where I can store my data.
+
+  On this occasion I will navigate to 
+ ###########################
+  cd /exports/eddie/scratch/ngiannak/
+ ###########################
+  There I will create two directories. 1 will be called Data, where I will be downloading my data in different folders depending on the project.
+    The 2nd one will be called 10x, where I will be having the reference genome for 10x single cell and spatial analyses (for 10x data)
+
+To download the reference genome for human and mouse I go here:
+    
+    https://support.10xgenomics.com/single-cell-dna/software/downloads/latest?
+
+    Then at the command line either at the 10x/human or the 10x/mouse folder,
+    I do wget  https://cf.10xgenomics.com/supp/cell-dna/refdata-GRCh38-1.0.0.tar.gz (human)
+        wget https://cf.10xgenomics.com/supp/cell-dna/refdata-GRCm38-1.0.0.tar.gz (mouse)
+
+and then I do 
+  tar -xzvf refdata-GRCh38-1.0.0.tar.gz 
+  tar -xzvf refdata-GRCm38-1.0.0.tar.gz
+
+  Now I have the refrence genome both for human and mouse.
+    
+    
+    At the data directory I move to the Data folder and create a new directory where I will download the data for a specific project
+ ###########################
+    mkdir HamedNatComms
+   ###########################  
+    , where I download the data from Akram's study on developing brain and cancer (GBM)
+
+But first I need to find the data at GEO and copy the link that will help me to download it.
+    1. go here: https://www.ncbi.nlm.nih.gov/geo/
+    2. Find Tools and click FTP site
+    3. click series and navigate to the required folder
+          A. For example, I use use GEO ID given in the paper, GSE50499.
+          B. Find the GSE50nnn/ directory
+          C. Enter the GSE50499/ folder
+             The data files available are in the suppl/ directory. If we choose to download all associated data, we can download the entire suppl/ directory
+          D. Use the wget command followed by the link to the suppl/ directory (right-clicking and choosing ‘Copy Link Address’).
+
+    To download the data I do:
+
+    ###########################
+wget https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200202/suppl/GSE200202_forebrain_atlas.h5ad.gz
+    ###########################
+
+
+
+
+      
