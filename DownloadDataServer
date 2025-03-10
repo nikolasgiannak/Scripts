@@ -164,23 +164,23 @@ SRR19643012_1.fastq.gz is index, not to be used
 SRR19643012_2.fastq.gz is read 1 ( I will rename it)
 SRR19643012_3.fastq.gz is read 2 ( I will rename it)
 
-For SRR19643012_2.fastq.gz I rename it SRR196431_S1_L001_R1_001.fastq.gz, to agree with cellranger's naming guidelines.
+For SRR19643012_2.fastq.gz I rename it SRR196432_S1_L001_R1_001.fastq.gz, to agree with cellranger's naming guidelines.
     SRR19643013_2.fastq.gz --> SRR196432_S1_L002_R1_001.fastq.gz
     SRR19643014_2.fastq.gz --> SRR196432_S1_L003_R1_001.fastq.gz
-    SRR19643015_2.fastq.gz --> SRR196432_S1_L004_R1_001.fastq.gz
-    SRR19643016_2.fastq.gz --> SRR196432_S1_L005_R1_001.fastq.gz
-    SRR19643017_2.fastq.gz --> SRR196432_S1_L006_R1_001.fastq.gz
-    SRR19643018_2.fastq.gz --> SRR196432_S1_L007_R1_001.fastq.gz
-    SRR19643019_2.fastq.gz --> SRR196432_S1_L008_R1_001.fastq.gz
+    mv SRR19643015_2.fastq.gz SRR196432_S1_L004_R1_001.fastq.gz
+    mv SRR19643016_2.fastq.gz SRR196432_S1_L005_R1_001.fastq.gz
+    mv SRR19643017_2.fastq.gz SRR196432_S1_L006_R1_001.fastq.gz
+    mv SRR19643018_2.fastq.gz SRR196432_S1_L007_R1_001.fastq.gz
+    mv SRR19643019_2.fastq.gz SRR196432_S1_L008_R1_001.fastq.gz
   AND
-For SRR19643012_3.fastq.gz --> SRR196432_S1_L001_R2_001.fastq.gz, I change R1 to R2 as it is the 2nd read file.
-    SRR19643013_3.fastq.gz --> SRR196432_S1_L002_R2_001.fastq.gz
-    SRR19643014_3.fastq.gz --> SRR196432_S1_L003_R2_001.fastq.gz
-    SRR19643015_3.fastq.gz --> SRR196432_S1_L004_R2_001.fastq.gz
-    SRR19643016_3.fastq.gz --> SRR196432_S1_L005_R2_001.fastq.gz
-    SRR19643017_3.fastq.gz --> SRR196432_S1_L006_R2_001.fastq.gz
-    SRR19643018_3.fastq.gz --> SRR196432_S1_L007_R2_001.fastq.gz
-    SRR19643019_3.fastq.gz --> SRR196432_S1_L008_R2_001.fastq.gz
+For mv SRR19643012_3.fastq.gz SRR196432_S1_L001_R2_001.fastq.gz, I change R1 to R2 as it is the 2nd read file.
+    mv SRR19643013_3.fastq.gz SRR196432_S1_L002_R2_001.fastq.gz
+    mv SRR19643014_3.fastq.gz SRR196432_S1_L003_R2_001.fastq.gz
+    mv SRR19643015_3.fastq.gz SRR196432_S1_L004_R2_001.fastq.gz
+    mv SRR19643016_3.fastq.gz SRR196432_S1_L005_R2_001.fastq.gz
+    mv SRR19643017_3.fastq.gz SRR196432_S1_L006_R2_001.fastq.gz
+    mv SRR19643018_3.fastq.gz SRR196432_S1_L007_R2_001.fastq.gz
+    mv SRR19643019_3.fastq.gz SRR196432_S1_L008_R2_001.fastq.gz
 
 
 
