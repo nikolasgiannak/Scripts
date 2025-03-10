@@ -159,6 +159,16 @@ SRR19643017
 SRR19643018
 SRR19643019
 
+For these, I have 3 output files, as I see at each SRR's metadata tab. By checking these, the first correspons to Index, the 2nd to read 1 and the 3rd to read 2.
+SRR19643012_1.fastq.gz is index, not to be used
+SRR19643012_2.fastq.gz is read 1 ( I will rename it)
+SRR19643012_3.fastq.gz is read 2 ( I will rename it)
+
+
+
+
+
+
 To run an Rstudio session, I follow the instructions here:
 
 https://www.wiki.ed.ac.uk/display/ResearchServices/RStudio
