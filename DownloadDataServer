@@ -218,6 +218,12 @@ cellranger count --id=$CR_NAME \
 --fastqs=$FQ_PATH \
 --sample=SRR196431,SRR196432 \
 
+
+I tried the pipeline but I encountered several error either related to file containing the transcriptome, or with the --sample=SRR196431,SRR196432 command.
+At the end I ran the following command as indicated in the output.txt, to receive assistance.
+cellranger upload ngiannak@exseed.ed.ac.uk "10032025_HamedTumourscMouse/10032025_HamedTumourscMouse.mri.tgz"
+
+
 To run an Rstudio session, I follow the instructions here:
 
 https://www.wiki.ed.ac.uk/display/ResearchServices/RStudio
