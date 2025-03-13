@@ -1,0 +1,17 @@
+
+# Location of iGenomes at Eddie. To be used in frameworks such as nextflow and nf-core
+
+For Ensemble mice
+the complete path from the BioinformaticsResources is here:
+
+# Whole genome fasta
+
+/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Sequence/WholeGenomeFasta/genome.fa
+
+# Ensemble gtf file 
+
+/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Annotation/Genes/genes.gtf
+ GTF_PATH=/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Annotation/Genes/genes.gtf
+
+--gtf=$GTF_PATH
+
