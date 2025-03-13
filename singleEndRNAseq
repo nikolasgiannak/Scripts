@@ -1,0 +1,6 @@
+
+
+# load sra toolkit to use for prefetch and fastq-dump
+module load igmm/apps/sratoolkit/3.1.1 
+fasterq-dump  SRR*
+gzip *.fastq
