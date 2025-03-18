@@ -14,3 +14,16 @@ module load R
 module load rstudio
 rstudio-server
 ''
+
+After following the on screen instructions, Irun the following command in a new local terminal and enter my password if prompted:
+
+''
+ ssh -NL 9899:192.41.105.65:9899 ngiannak@eddie.ecdf.ed.ac.uk 
+''
+
+Then, I point my browser on my local computer to 
+''
+http://localhost:9899
+''
+
+When finished, I kill both sessions with Ctrl+C.
