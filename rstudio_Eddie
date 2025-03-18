@@ -1,0 +1,16 @@
+
+Login to server with:
+
+''
+ngiannak@eddie.ecdf.ed.ac.uk 
+''
+
+Then on my personal space I create an interactive session, source the app environment, load R and Rstudio and open the rstudio-server
+
+''
+qlogin -l h_vmem=8G
+source /exports/applications/support/set_qlogin_environment.sh
+module load R
+module load rstudio
+rstudio-server
+''
