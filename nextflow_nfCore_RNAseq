@@ -7,7 +7,7 @@
 # memory limit: -l h_vmem
 #$ -N tumourHamedscMouse
 #$ -cwd
-#$ -pe sharedmem 4
+#$ -pe sharedmem 8
 #$ -l h_rt=48:00:00
 #$ -l h_vmem=8G
 #$ -e error1.txt
