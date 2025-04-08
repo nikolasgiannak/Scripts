@@ -6,3 +6,19 @@
 # Nextflow pipelines need to be run interactively, in an interactive session on Eddie. 
 
 # The pipeline will then submit jobs to the Eddie scheduler for you.
+
+# The following steps need to be followed.
+
+#  1. Login into eddie
+                        ssh  ngiannak@eddie.ecdf.ed.ac.uk
+
+#  2. Start a screen session
+                        [ngiannak@login01(eddie) ~]$ screen
+
+# To inspect the presence of an active screen, DO THIS:
+                        screen -ls
+
+# 3. Once in the screen session, start a qlogin session with a good amount of virtual memory ( 32GB seems to work for this particular pipeline):
+                        qlogin -l h_vmem=32G
+
+#
