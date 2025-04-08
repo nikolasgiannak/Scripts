@@ -51,7 +51,7 @@
 
 # For example, see in 
 # /exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/work/e6/6c2ee08ba1ca7e8b25164385dbb6c8
-#The hidden files .command.begin  .command.log  .command.run  .command.trace   .command.err    .command.out  .command.sh   .exitcode  
+# The hidden files .command.begin  .command.log  .command.run  .command.trace   .command.err    .command.out  .command.sh   .exitcode  
 # are all files related to the job and can help you work out the reasons why the job may have failed (if it does fail).
 
 
