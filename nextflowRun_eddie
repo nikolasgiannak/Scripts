@@ -1,4 +1,8 @@
 
 # Steps to follow for Nextflow pipelines. 
 
-# This is an exmple for an RNAseq pipeline but
+# This is an exmple for an RNAseq pipeline but the same principles apply for all the pipelines.
+
+# Nextflow pipelines need to be run interactively, in an interactive session on Eddie. 
+
+# The pipeline will then submit jobs to the Eddie scheduler for you.
