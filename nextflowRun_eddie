@@ -50,7 +50,7 @@
 # are all files related to the job and can help you work out the reasons why the job may have failed (if it does fail).
 # These are all hidden files under the respective work directories (each job gets one work directory). 
 
-# 7. After the succesful copletion of the pipeline I will get the output here:
+# 7. After the succesful completion of the pipeline I will get the output here:
                         /exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output. 
 
 
