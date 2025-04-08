@@ -57,8 +57,10 @@
 # 7. After the succesful completion of the pipeline I will get the output here:
                         /exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output.
 
-# 8. To monitor the progress of the pipeline by reconnecting to the screen session that has been started
+# 8. To monitor the progress of the pipeline by reconnecting to the screen session that has been started (check comment 2 at point 2):
                       screen -r 1506484.pts-251.login01 
+
+
 
 
 
