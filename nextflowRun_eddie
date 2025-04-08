@@ -32,4 +32,9 @@
                        OUTPUT_DIR=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output
                        SAMPLESHEET=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/samplesheet.csv
 
+# 6. Run the pipeline you little silly. This is how you do it. Take it or leave it :p
+                      nextflow run nf-core/rnaseq --input=$SAMPLESHEET --outdir=$OUTPUT_DIR --gtf=$GTF_PATH --fasta=$FASTA_PATH -profile eddie
+                
+                      
+
 
