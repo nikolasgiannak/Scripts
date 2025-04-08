@@ -21,4 +21,15 @@
 # 3. Once in the screen session, start a qlogin session with a good amount of virtual memory ( 32GB seems to work for this particular pipeline):
                         qlogin -l h_vmem=32G
 
-#
+# 4. In the qlogin session, you I can then set the input/output variables and load the appropriate modules to be used for the analysis
+                        module load igmm/apps/nextflow/24.04.4
+                        module load singularity
+                        module load java
+
+# 5. Load reference genome files, path to fasta files, output directory and samplesheet with sample files.
+                       GTF_PATH=/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Annotation/Genes/genes.gtf
+                       FASTA_PATH=/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Sequence/WholeGenomeFasta/genome.fa
+                       OUTPUT_DIR=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output
+                       SAMPLESHEET=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/samplesheet.csv
+
+
