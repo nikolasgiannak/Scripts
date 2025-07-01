@@ -1,0 +1,108 @@
+
+
+data<-read.csv("/Users/nikolasgiannakis/Desktop/AAA_Ovarian_cancer_p/RNAseq_data_heatlhy_ov_br_copd/myUpdatedData_neuCncerProject/Cluster1/pathways_Metascape/regulationIL8_production.csv", header=TRUE, sep=",") 
+dat2<-read.csv("/Users/nikolasgiannakis/Desktop/AAA_Ovarian_cancer_p/RNAseq_data_heatlhy_ov_br_copd/myUpdatedData_neuCncerProject/Cluster1/pathways_Metascape/regulationIFNb_production.csv", header=TRUE, sep=",") 
+
+prepare_radar_data <- function(data) {
+  # Extract numeric columns (genes)
+  numeric_cols <- data[, -1]  # Remove first column (categories)
+  
+  # Calculate max and min for each gene column
+  max_vals <- apply(numeric_cols, 2, max, na.rm = TRUE)
+  min_vals <- apply(numeric_cols, 2, min, na.rm = TRUE)
+  
+  # Create the radar chart data format
+  radar_data <- rbind(max_vals, min_vals, numeric_cols)
+
+  # Add category names as row names (excluding max/min rows)
+  rownames(radar_data) <- c("Max", "Min", data[, 1])
+  
+  return(radar_data)
+}
+
+radar_data <- prepare_radar_data(data)
+radar_data2 <- prepare_radar_data(dat2)
+
+#Create the radar plot
+radarchart(radar_data2,
+           # Customize appearance
+           axistype = 0,           # Axis type
+           pcol = c("deepskyblue2", "coral", "brown4"),  # Colors for each category
+       #   pfcol = c("deepskyblue4", "coral1", "white"),  # Fill colors with transparency
+           plwd = 2,               # Line width
+           plty = 1,               # Line type
+           cglcol = "grey",        # Grid color
+           cglty = 3,              # Grid line type
+           axislabcol = "grey",    # Axis label color
+           caxislabels = seq(0, max(radar_data2[1,]), length.out = 5),  # Axis labels
+           cglwd = 2,            # Grid line width
+           vlcex = 1 # Variable label size
+)
+
+# Add legend
+legend(x = 0.8, y = 1.3, 
+       legend = rownames(radar_data2)[-c(1,2)],  # Category names (excluding Max/Min)
+       bty = "n", 
+       pch = 20, 
+       col = c("deepskyblue2", "coral", "brown4"), 
+       text.col = "black", 
+       cex = 1, 
+       pt.cex = 3)
+
+# Install from CRAN
+#install.packages("tidyverse")
+library(tidyverse)
+# install.packages("ggpubr")
+library(ggpubr)
+
+df2 <- t(dat2) %>%
+  as.data.frame() %>%
+  rownames_to_column("Field")
+df2
+df2 = df2[-1,]
+df3 <- df2 %>%
+  select(Field, Healthy, BrCa, OvCa) %>%
+  pivot_longer(
+    cols = c(Healthy, BrCa, OvCa),
+    names_to = "Condition",
+    values_to = "value"
+  )
+head(df3)
+
+
+ggdotchart(
+  df3, x = "Field", y = "value", 
+  group = "Condition", color = "Condition", palette = "jco",
+  add = "segment", position = position_dodge(0.5),
+  sorting = "descending"
+)
+
+dataCOX<-read.csv("/Users/nikolasgiannakis/Desktop/AAA_Ovarian_cancer_p/RNAseq_data_heatlhy_ov_br_copd/myUpdatedData_neuCncerProject/Cluster2/pathways_Metascape/eicosnoidMetabolism_COX.csv", header=TRUE, sep=",") 
+
+radar_dataCOX <- prepare_radar_data(dataCOX)
+#Create the radar plot
+radarchart(radar_dataCOX,
+           # Customize appearance
+           axistype = 0,           # Axis type
+           pcol = c("deepskyblue2", "coral", "brown4", "darkgreen"),  # Colors for each category
+           #   pfcol = c("deepskyblue4", "coral1", "white"),  # Fill colors with transparency
+           plwd = 2,               # Line width
+           plty = 1,               # Line type
+           cglcol = "grey",        # Grid color
+           cglty = 3,              # Grid line type
+           axislabcol = "grey",    # Axis label color
+           caxislabels = seq(0, max(radar_dataCOX[1,]), length.out = 5),  # Axis labels
+           cglwd = 2,            # Grid line width
+           vlcex = 1 # Variable label size
+)
+
+# Add legend
+legend(x = 0.8, y = 1.3, 
+       legend = rownames(radar_dataCOX)[-c(1,2)],  # Category names (excluding Max/Min)
+       bty = "n", 
+       pch = 20, 
+       col = c("deepskyblue2", "coral", "brown4", "darkgreen"), 
+       text.col = "black", 
+       cex = 1, 
+       pt.cex = 3)
+
