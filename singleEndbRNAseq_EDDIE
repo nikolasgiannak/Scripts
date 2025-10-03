@@ -1,3 +1,47 @@
+#########################################################################################
+
+Important paths for me -----> ngiannak
+
+ngiannak@eddie.ecdf.ed.ac.uk:/exports/eddie3_homes_local/ngiannak/
+/exports/cmvm/eddie/scs/groups/eddie_csch_crh_PollardLab/Rpackages
+/exports/eddie/scratch/ngiannak/Data
+
+#########################################################################################
+Step 0
+----------------------------------------------------------------------------------------------------
+a. ****************
+Check how much available space I have on my home directory(home directory quota) -->  
+
+quota -s
+
+This shows my disk usage and limits for my home directory (/home/ngiannak).
+
+b. ****************
+Check specific filesystem usage -->
+
+df -h ~
+
+Shows space usage for my home directory.
+
+c. **************** 
+Eddie typically has different storage areas. To check my scratch space:
+
+df -h /exports/eddie/scratch/ngiannak
+
+
+d. **************** 
+Most comprehensive - check all my quotas:
+lfs quota -u ngiannak /exports/eddie
+
+e. **************** 
+Check current directory size:
+bashdu -sh ~
+du -sh ~/path/to/specific/folder
+
+
+Shows how much space my files are actually using.
+
+----------------------------------------------------------------------------------------------------
 Step 1. 
 
 Here is how my directory for the single-end RNAseq analysis on EDDIE should be:
@@ -12,8 +56,7 @@ project/
 ├── reference/              # Genome FASTA and GTF
 └── results/                # DESeq2 output
 
-
-
+----------------------------------------------------------------------------------------------------
 Step 2. 
 
 Create metadat file to accompany my analysis. This is how the metadata file should look like:
@@ -24,7 +67,7 @@ S2,SAMPLE_2,raw_data/S2.fastq.gz
 ...
 S24,SMAPLE_24,raw_data/S24.fastq.gz
 
-
+----------------------------------------------------------------------------------------------------
  Step 3. 
 
 This is how the script for the pipeline should be, and it has to be saved as scripts/singleEndRNAseq_pipeline.sh and get submitted as a job:
@@ -68,7 +111,7 @@ for bam in aligned/*.bam; do
     htseq-count -f bam -r pos -s no -i gene_id $bam reference/genes.gtf > counts/${base}_counts.txt
 done
 
-
+----------------------------------------------------------------------------------------------------
 Step 4.
 
 This is the command to run the script on Eddie
