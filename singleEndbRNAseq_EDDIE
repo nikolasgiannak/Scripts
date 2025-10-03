@@ -1,4 +1,6 @@
-1. Here is how my directory for the single-end RNAseq analysis on EDDIE should be:
+Step 1. 
+
+Here is how my directory for the single-end RNAseq analysis on EDDIE should be:
 
 project/
 ├── raw_data/                # FASTQ files
@@ -12,7 +14,9 @@ project/
 
 
 
-2. This is how the metadata file should look like:
+Step 2. 
+
+Create metadat file to accompany my analysis. This is how the metadata file should look like:
 
 sample,condition,fastq
 S1,SAMPLE_1,raw_data/S1.fastq.gz
@@ -21,7 +25,9 @@ S2,SAMPLE_2,raw_data/S2.fastq.gz
 S24,SMAPLE_24,raw_data/S24.fastq.gz
 
 
-3. This is how the script for the pipeline should be, and it has to be saved as scripts/singleEndRNAseq_pipeline.sh and get submitted as a job:
+ Step 3. 
+
+This is how the script for the pipeline should be, and it has to be saved as scripts/singleEndRNAseq_pipeline.sh and get submitted as a job:
 
 #!/bin/bash
 #SBATCH --job-name=rnaseq_pipeline
@@ -63,7 +69,9 @@ for bam in aligned/*.bam; do
 done
 
 
-4. This is the command to run the script on Eddie
+Step 4.
+
+This is the command to run the script on Eddie
 sbatch singleEndRNAseq_pipeline.sh
 
 
