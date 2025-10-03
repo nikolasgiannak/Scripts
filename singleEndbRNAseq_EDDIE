@@ -12,3 +12,15 @@ project/
 
 
 
+This is how the metadata file should look like:
+
+sample,condition,fastq
+S1,SAMPLE_1,raw_data/S1.fastq.gz
+S2,SAMPLE_2,raw_data/S2.fastq.gz
+...
+S24,SMAPLE_24,raw_data/S24.fastq.gz
+
+
+
+
+
