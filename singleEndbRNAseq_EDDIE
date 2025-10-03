@@ -64,7 +64,7 @@ done
 
 
 4. This is the command to run the script on Eddie
-sbatch scripts/rnaseq_pipeline.sh
+sbatch singleEndRNAseq_pipeline.sh
 
 
 
