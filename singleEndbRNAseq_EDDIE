@@ -1,0 +1,14 @@
+Here is how my directory for the single-end RNAseq analysis on EDDIE should be:
+
+project/
+├── raw_data/                # FASTQ files
+├── trimmed/                # Output of cutadapt
+├── qc/                     # FastQC and MultiQC reports
+├── aligned/                # BAM files
+├── counts/                 # HTSeq-count output
+├── scripts/                # SLURM scripts
+├── reference/              # Genome FASTA and GTF
+└── results/                # DESeq2 output
+
+
+
