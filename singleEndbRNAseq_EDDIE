@@ -21,6 +21,46 @@ S2,SAMPLE_2,raw_data/S2.fastq.gz
 S24,SMAPLE_24,raw_data/S24.fastq.gz
 
 
+This is how the script for the pipeline should be, and it has to be saved as scripts/singleEndRNAseq_pipeline.sh and get submitted as a job:
+
+#!/bin/bash
+#SBATCH --job-name=rnaseq_pipeline
+#SBATCH --output=logs/rnaseq_%j.out
+#SBATCH --error=logs/rnaseq_%j.err
+#SBATCH --time=24:00:00
+#SBATCH --mem=32G
+#SBATCH --cpus-per-task=8
+
+module load fastqc cutadapt hisat2 samtools htseq R
+
+# Step 1: QC
+mkdir -p qc
+for fq in raw_data/*.fastq.gz; do
+    fastqc $fq -o qc/
+done
+multiqc qc/ -o qc/
+
+# Step 2: Trimming
+mkdir -p trimmed
+for fq in raw_data/*.fastq.gz; do
+    base=$(basename $fq .fastq.gz)
+    cutadapt -q 20 -o trimmed/${base}_trimmed.fastq.gz $fq
+done
+
+# Step 3: Alignment
+mkdir -p aligned
+for fq in trimmed/*_trimmed.fastq.gz; do
+    base=$(basename $fq _trimmed.fastq.gz)
+    hisat2 -p 8 -x reference/genome_index -U $fq | \
+    samtools view -bS - | samtools sort -o aligned/${base}.bam
+done
+
+# Step 4: Quantification
+mkdir -p counts
+for bam in aligned/*.bam; do
+    base=$(basename $bam .bam)
+    htseq-count -f bam -r pos -s no -i gene_id $bam reference/genes.gtf > counts/${base}_counts.txt
+done
 
 
 
