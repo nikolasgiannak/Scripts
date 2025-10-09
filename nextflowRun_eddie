@@ -35,6 +35,13 @@
                        FASTA_PATH=/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Sequence/WholeGenomeFasta/genome.fa
                        OUTPUT_DIR=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output
                        SAMPLESHEET=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/samplesheet.csv
+For SAMPLESHEET:
+********************************
+sample,fastq_1,fastq_2,strandedness
+CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz,auto
+CONTROL_REP1,AEG588A1_S1_L003_R1_001.fastq.gz,AEG588A1_S1_L003_R2_001.fastq.gz,auto
+CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz,auto
+*********************************
 
 # 6. Run the pipeline you little silly. This is how you do it. Take it or leave it :p
                       nextflow run nf-core/rnaseq --input=$SAMPLESHEET --outdir=$OUTPUT_DIR --gtf=$GTF_PATH --fasta=$FASTA_PATH -profile eddie
