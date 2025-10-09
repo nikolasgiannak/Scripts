@@ -18,8 +18,8 @@
 # Comment 1:    To inspect the presence of an active screen, DO THIS:
                         screen -ls
 
-  Comment 2:    There is a screen on:  1506484.pts-251.login01 (Detached)
-#                1 Socket in /run/screen/S-ngiannak. 
+ # Comment 2:    There is a screen on:  1506484.pts-251.login01 (Detached)
+                1 Socket in /run/screen/S-ngiannak. 
 
 
 # 3. Once in the screen session, start a qlogin session with a good amount of virtual memory ( 32GB seems to work for this particular pipeline):
