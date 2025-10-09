@@ -36,6 +36,7 @@
                        OUTPUT_DIR=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output
                        SAMPLESHEET=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/samplesheet.csv
 For SAMPLESHEET:
+Prepare a "samplesheet.csv" file that should look like this:
 ********************************
 sample,fastq_1,fastq_2,strandedness
 CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz,auto
