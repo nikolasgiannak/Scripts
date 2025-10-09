@@ -33,8 +33,8 @@
 # 5. Load reference genome files, path to fasta files, output directory and samplesheet with sample files.
                        GTF_PATH=/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Annotation/Genes/genes.gtf
                        FASTA_PATH=/gpfs/igmmfs01/eddie/BioinformaticsResources/igenomes/Mus_musculus/Ensembl/GRCm39/Sequence/WholeGenomeFasta/genome.fa
-                       OUTPUT_DIR=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output
-                       SAMPLESHEET=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/samplesheet.csv
+                       OUTPUT_DIR=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/output                    # my output directory
+                       SAMPLESHEET=/exports/eddie/scratch/ngiannak/Data/singleEndRNAseq/samplesheet.csv          # path to samplesheet file
 For SAMPLESHEET:
 Prepare a "samplesheet.csv" file that should look like this:
 ********************************
